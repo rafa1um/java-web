@@ -1,5 +1,6 @@
 package br.com.movieloc.servlet;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,18 +20,27 @@ public class AdicionaMovieServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	public AdicionaMovieServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	protected void service(HttpServletRequest request,
+	protected void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws IOException, ServletException {
 
 			PrintWriter out = response.getWriter();
 			
 			String nome = request.getParameter("nome");
+			String registry = request.getParameter("registry");
+			int int_quantity = Integer.parseInt(request.getParameter("quantity"));
 			
 
 			Movie movie = new Movie();
 			movie.setNome(nome);
+			movie.setRegistry(registry);
+			movie.setQuantity(int_quantity);
 		
 		
 			MovieDao dao = new MovieDao();
@@ -42,5 +52,10 @@ public class AdicionaMovieServlet extends HttpServlet {
 			    " adicionado com sucesso");
 			out.println("</body>");
 			out.println("</html>");
-			}
+		}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 }

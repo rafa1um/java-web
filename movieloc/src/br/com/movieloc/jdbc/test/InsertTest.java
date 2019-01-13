@@ -9,7 +9,7 @@ public class InsertTest {
 		Movie movie = new Movie();
 	    
 	    movie.setNome("Léon: The Professional");
-	    movie.setRegistry(1);
+	    movie.setRegistry("22ab");
 	    movie.setQuantity(2);
 
 	    MovieDao dao = new MovieDao();

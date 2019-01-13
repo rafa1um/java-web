@@ -29,7 +29,7 @@ public class MovieDao {
 
             
             stmt.setString(1,movie.getNome());
-            stmt.setInt(2,movie.getRegistry());
+            stmt.setString(2,movie.getRegistry());
             stmt.setInt(3,movie.getQuantity());
 
 
@@ -48,9 +48,8 @@ public class MovieDao {
             PreparedStatement stmt = connection
                     .prepareStatement(sql);
             stmt.setString(1, movie.getNome());
-            stmt.setInt(2, movie.getRegistry());
+            stmt.setString(2, movie.getRegistry());
             stmt.setInt(3, movie.getQuantity());
-            stmt.setInt(5, movie.getRegistry());
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
@@ -62,7 +61,7 @@ public class MovieDao {
         try {
             PreparedStatement stmt = connection
                     .prepareStatement("delete from movies where registry=?");
-            stmt.setInt(1, movie.getRegistry());
+            stmt.setString(1, movie.getRegistry());
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
@@ -82,7 +81,7 @@ public class MovieDao {
                
                 Movie movie = new Movie();
                 movie.setNome(rs.getString("nome"));
-                movie.setRegistry(rs.getInt("registry"));
+                movie.setRegistry(rs.getString("registry"));
                 movie.setQuantity(rs.getInt("quantity"));
                 
                

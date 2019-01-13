@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Movie Loc</title>
 </head>
 <body>
 	<form>
-  		<button formaction="add-movie.jsp">Adicionar Filme</button>
+  		<button formaction="add-movie.html">Adicionar Filme</button>
 	</form>
 	<form>
   		<button formaction="list-movie.jsp">Listar Filmes</button>
