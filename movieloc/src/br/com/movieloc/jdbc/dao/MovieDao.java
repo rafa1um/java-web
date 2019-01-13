@@ -57,7 +57,7 @@ public class MovieDao {
         }
     }
     
-    public void remove(Movie movie) {
+    public void exclui(Movie movie) {
         try {
             PreparedStatement stmt = connection
                     .prepareStatement("delete from movies where registry=?");

@@ -2,7 +2,8 @@ package br.com.movieloc.servlet;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,8 +31,6 @@ public class AdicionaMovieServlet extends HttpServlet {
             HttpServletResponse response)
             throws IOException, ServletException {
 
-			PrintWriter out = response.getWriter();
-			
 			String nome = request.getParameter("nome");
 			String registry = request.getParameter("registry");
 			int int_quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -46,12 +45,9 @@ public class AdicionaMovieServlet extends HttpServlet {
 			MovieDao dao = new MovieDao();
 			dao.adiciona(movie);
 			
-			out.println("<html>");
-			out.println("<body>");
-			out.println("Movie " + movie.getNome() +
-			    " adicionado com sucesso");
-			out.println("</body>");
-			out.println("</html>");
+			RequestDispatcher rd = request
+	                 .getRequestDispatcher("/movie-added.jsp");
+	         rd.forward(request,response);
 		}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

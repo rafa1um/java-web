@@ -7,8 +7,9 @@
 <title>Movie Loc</title>
 </head>
 <body>
+	<h1>DATABASE DE FILMES</h1>
 	<form>
-  		<button formaction="add-movie.html">Adicionar Filme</button>
+  		<button formaction="add-movie.jsp">Adicionar Filme</button>
 	</form>
 	<form>
   		<button formaction="list-movie.jsp">Listar Filmes</button>
