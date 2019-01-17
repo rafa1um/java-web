@@ -21,7 +21,7 @@ public class RemoveMovieLogic implements Logica{
 
         System.out.println("Excluindo filme... ");
 
-        return "list-movie.jsp";
+        return "mvc?logica=ListaMovieLogic";
     }
 
 }

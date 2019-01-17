@@ -9,13 +9,16 @@
 </head>
 <body>
 	<h1>DATABASE DE FILMES</h1>
-	<jsp:useBean id="dao" class="br.com.movieloc.jdbc.dao.MovieDao"/>
           <table>
-              <c:forEach var="movie" items="${dao.lista}">
+          <td>Nome: </td> <td>Registro: </td> <td>Quantidade: </td>
+              <c:forEach var="movie" items="${movies}">
                   <tr>
                       <td>${movie.nome}</td>
                       <td>${movie.registry}</td>
                       <td>${movie.quantity}</td>
+                      <td>
+                      	<a href="mvc?logica=AlteraLogic&registry=${movie.registry}">Editar</a>
+                      </td>
                       <td>
          			    <a href="mvc?logica=RemoveMovieLogic&registry=${movie.registry}">Remover</a>
        				  </td>

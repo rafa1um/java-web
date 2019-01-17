@@ -10,12 +10,12 @@ import br.com.movieloc.jdbc.modelo.Movie;
 
 public class ListaMovieLogic implements Logica {
 	
-	public String executa(HttpServletRequest request, HttpServletResponse response)
+	public String executa(HttpServletRequest req, HttpServletResponse res)
             throws Exception {
 
         List<Movie> movies = new MovieDao().getLista();
 
-        request.setAttribute("movies", movies);
+        req.setAttribute("movies", movies);
 
         return "/WEB-INF/jsp/list-movie.jsp";
     }

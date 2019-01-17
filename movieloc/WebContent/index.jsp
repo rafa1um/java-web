@@ -9,10 +9,10 @@
 <body>
 	<h1>DATABASE DE FILMES</h1>
 	<form>
-  		<button formaction="add-movie.jsp">Adicionar Filme</button>
+  		<a href="add-movie.jsp">Adicionar Filme</a>
 	</form>
 	<form>
-  		<button formaction="list-movie.jsp">Listar Filmes</button>
+  		<a  href="mvc?logica=ListaMovieLogic">Listar Filmes</a>
 	</form>
 </body>
 </html>

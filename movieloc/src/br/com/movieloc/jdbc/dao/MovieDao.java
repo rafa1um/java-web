@@ -41,15 +41,18 @@ public class MovieDao {
     }
     
     public void altera(Movie movie) {
-        String sql = "update movies set nome=?, quantity=?,"+
+        String sql = "update movies set nome=?, quantity=?"+
                 " where registry=?";
 
         try {
             PreparedStatement stmt = connection
                     .prepareStatement(sql);
+            
             stmt.setString(1, movie.getNome());
-            stmt.setString(2, movie.getRegistry());
-            stmt.setInt(3, movie.getQuantity());
+            stmt.setInt(2, movie.getQuantity());
+            stmt.setString(3,movie.getRegistry());
+            
+            
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
