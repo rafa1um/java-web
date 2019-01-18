@@ -20,6 +20,7 @@ public class AlteraMovieLogic implements Logica {
 		
 		MovieDao dao = new MovieDao();
 		dao.altera(movie);
+		
 		System.out.println("Livro atualizado...");
 		return "mvc?logica=ListaMovieLogic";
 	}
